@@ -1,0 +1,15 @@
+{
+  "name": "webby",
+  "version": "1.0.0",
+  "description": "Testing the Tauri web GUI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tauri": "tauri"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tauri": "^0.11.0"
+  }
+}
