@@ -29,10 +29,17 @@ function setupButton() {
 }
 
 function buttonClicked() {
+    console.log("invoking greeting")
+
     var result = invoke({
         cmd: "greet",
-        name: "Cody",
+        name: "World",
     })
 
+    console.log("invoked greeting")
+
+    if (result) {
     setGreeting(result.html)
+}
+    
 }
