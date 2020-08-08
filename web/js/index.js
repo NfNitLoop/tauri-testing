@@ -4,25 +4,24 @@ import api from "/web_modules/tauri/api"
 let invoke = api.default.tauri.invoke;
 
 export function load() {
-    setGreeting();
     setupButton();
     console.log("api:", api)
 }
 
-function setGreeting() {
+function setGreeting(html) {
     var content = document.getElementById("content");
     if (!content) { 
-        alert("Can't find 'content' element.");
+        console.log("Can't find 'content' element.");
         return;
     }
 
-    content.innerHTML = `<p>Hello, <i>world!</i></p>`;
+    content.innerHTML = html;
 }
 
 function setupButton() {
     var button = document.getElementById("button");
     if (!button) { 
-        alert("Can't find 'button' element.");
+        console.log("Can't find 'button' element.");
         return;
     }
 
@@ -30,8 +29,10 @@ function setupButton() {
 }
 
 function buttonClicked() {
-    invoke({
+    var result = invoke({
         cmd: "greet",
         name: "Cody",
     })
+
+    setGreeting(result.html)
 }
